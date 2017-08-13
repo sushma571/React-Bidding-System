@@ -36,7 +36,7 @@ class Welcome extends Component {
           <div className="row user-banner"> 
             {userName ==='' ? (
               <div className="col-md-12  label-center"> 
-                 <h3>Please Enter Your Name to bid</h3>       
+                 <h3>Please Enter Your Name To Bid</h3>       
                   <form className="form-inline" onSubmit={this.handleSubmit}>
                     <div className="form-group mx-sm-3" >                                       
                       <input id="inputUsername" placeholder="User Name" className="form-control" type="text" value={this.state.value} onChange={this.handleChange} />
