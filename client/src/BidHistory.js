@@ -7,7 +7,7 @@ class BidHistory extends Component {
 	 render() { 
 	 	var self = this;
 	 	var historyList = Object.keys(this.props.bidHistory).map(function(key) {
-	 		return <li className="list-group-item" key={key}><span>{key}</span> <span style={{float:'right'}}>{self.props.bidHistory[key]}</span></li>
+	 		return <li className="list-group-item" key={key}><span>{key}</span> <span style={{float:'right'}}>${self.props.bidHistory[key]}</span></li>
 	 	});
 	 	return (
 	 			
