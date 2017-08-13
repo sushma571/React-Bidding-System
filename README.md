@@ -2,8 +2,11 @@
 
 ## React-express-websocket based Bidding system
 
-This single Page application is a combination of React App and an API server written in Express. WebSockets api socket.io is used to update the bid history and bidding time in real time.
-React App is created using 'create-react-app', it auomates the build of the app and the environment will have everything to build a modern React app
+This single Page application is a combination of React App and an API server written in Express.
+
+WebSockets api socket.io is used to update the bid history and bidding time in real time.
+
+React App is created using 'create-react-app', it auomates the build of the app and the environment will have everything to build a modern React app.
 
 # Running Application
 Install node and npm globally.
