@@ -90,7 +90,7 @@ class DetailList extends Component {
 class Details extends Component {
   constructor(props) {
     super(props);
-    this.state = {bidPrice:'',inputValue:''};
+    this.state = {bidPrice:'',inputValue:'', showBidInput: true};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -106,7 +106,12 @@ class Details extends Component {
     bidHistoryObj[this.props.userName] = this.state.inputValue;
     event.preventDefault();
     this.props.saveBid(bidHistoryObj,this.props.id);
+    this.setState({showBidInput:false});
 
+  }
+
+  reBid(event) {
+    this.setState({showBidInput:true});
   }
 
    render() { 
@@ -134,14 +139,22 @@ class Details extends Component {
                 </div>
                 {this.props.userName !=='' && 
                   <div>
-                    {this.props.timeFromServer >0 &&
+                    {this.state.showBidInput ?(
                     <form className="form-inline bid-form" onSubmit={this.handleSubmit}> 
-                      <div className="form-group mx-sm-3" >                  
-                        <input id="inputBid" className="form-control" type="number" placeholder="Your Price" min={this.props.basePrice} value={this.state.inputValue} onChange={this.handleChange} />                  
+                      {this.props.timeFromServer >0 &&
+                        <div>
+                          <div className="form-group mx-sm-3" >                  
+                            <input id="inputBid" className="form-control" type="number" placeholder="Your Price" min={this.props.basePrice} value={this.state.inputValue} onChange={this.handleChange} />                  
+                          </div>
+                        <input type="submit" className="btn btn-primary bid-submit-btn" value="Bid" />
                       </div>
-                    <input type="submit" className="btn btn-primary bid-submit-btn" value="Bid" />
+                       }
                     </form>
-                    }
+                    ):(
+                      <input type="button" className="btn btn-primary rebid-input" value="ReBid" onClick={this.reBid.bind(this)}/>
+                    )
+                   }
+                   
                   </div>
                 }
               </div>
