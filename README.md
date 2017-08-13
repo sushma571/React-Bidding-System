@@ -2,7 +2,8 @@
 
 ## React-express-websocket based Bidding system
 
-This application is a combination of React App and an API server written in Express. WebSockets api socket.io is used to update the bid history and bidding time in real time.
+This single Page application is a combination of React App and an API server written in Express. WebSockets api socket.io is used to update the bid history and bidding time in real time.
+React App is created using 'create-react-app', it auomates the build of the app and the environment will have everything to build a modern React app
 
 # Running Application
 Install node and npm globally.
@@ -60,7 +61,12 @@ A socket connection is established between client and server when client page lo
         
   ## Data
   
-  JSON files are used for dataLayer instead of a Database just for implementation easiness. In real Time a database is more efficient than a file system . livestock_details.json and bid_history.json are files used to read and write necessary data.
+ JSON files are used as dataLayer instead of a Database just for implementation easiness. In real Time a database is more efficient than a file system . livestock_details.json and bid_history.json are files used to read and write necessary data.
+ 
+
+ 
+ 
+  
   
   
         
