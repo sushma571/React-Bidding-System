@@ -22,10 +22,10 @@ var BID_HISTORY_FILE = path.join(__dirname, 'bid_history.json');
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 
-
+//handle for client connection
 io.on('connection', function(socket){
 	console.log('a user connected');
-
+    
 	socket.on('getTime', function(msg){
 			io.emit('remainingTime',(bidDuration-process.hrtime(startTime)[0]));
 		});
@@ -39,6 +39,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 // Put all API endpoints under '/api'
+//End point to get the livestock details
 app.get('/api/details', (req, res) => {
  
 	  fs.readFile(COW_DETAILS_FILE, function(err, data) {
@@ -52,6 +53,7 @@ app.get('/api/details', (req, res) => {
 	  });
 });
 
+//End point to get the bidHistory
 app.get('/api/bidhistory', (req, res) => {
 	fs.readFile(BID_HISTORY_FILE, function(err, data) {
 	    if (err) {
@@ -65,14 +67,14 @@ app.get('/api/bidhistory', (req, res) => {
 	  });
 });
 
-
+//End point to save the updated Bid History
 app.post('/api/bidhistory', (req, res) => {	 
 	 fs.writeFile(BID_HISTORY_FILE, JSON.stringify(req.body), function(err) {
       if (err) {
         console.error(err);
         process.exit(1);
       }
-
+      // Emits updated bid to all sockets upon successful save
       io.emit('updateBid', req.body);	    
       res.setHeader('Cache-Control', 'no-cache');
       res.json(req.body);

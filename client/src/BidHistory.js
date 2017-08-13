@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 
 class BidHistory extends Component {
-	constructor(props) {
-	    super(props);
-	}
+	
 	 render() { 
 	 	var self = this;
 	 	var historyList = Object.keys(this.props.bidHistory).map(function(key) {

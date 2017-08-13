@@ -12,48 +12,38 @@ class DetailList extends Component {
     this.state = {bidHistory:[],timeRemain:0} 
   } 
 
-   // Fetch passwords after first mount
+   //Fetch bidHistory after first mount
   componentDidMount() { 
     this.getBidHistory();
     var self = this; 
-    socket.on('updateBid', function(msg){
-      self.setState({bidHistory:msg});
-      console.log("msg from client"+JSON.stringify(msg));
+    //handle to listen updateBid from server socket
+    socket.on('updateBid', function(bidObj){
+      self.setState({bidHistory:bidObj});
+      
     }); 
-
+    //Emits 'getTime' to server socket
     socket.emit('getTime', 'test');
-    socket.on('remainingTime', function(timeFromServer){
-      //self.props.serverTimeSync(timeFromServer);
-      self.setState({timeRemain:timeFromServer});
-      //self.setState({timeRemain:timeFromServer});
-      console.log("time from client"+timeFromServer);
+    //handle to listen 'remaining time' from server socket
+    socket.on('remainingTime', function(timeFromServer){     
+      self.setState({timeRemain:timeFromServer}); 
     });     
   }
 
   getBidHistory = () => {
-    // Get the passwords and store them in state
+    // Get the bidhistory and store them in state
     fetch('/api/bidhistory')
       .then(res => res.json())
       .then(bidHistory => this.setState({bidHistory}));
   }
-  
-   
 
-
-  saveBid(bidhistory, liveStockID) {   
-    console.log("bidhistory=="+JSON.stringify(bidhistory));
+  saveBid(bidhistory, liveStockID) { 
     this.state.bidHistory[liveStockID] = bidhistory;
-    console.log(JSON.stringify(this.state.bidHistory));
+    // Save the  bidHistory  
     fetch('/api/bidhistory',{method:"POST",headers: new Headers({'content-type':'application/json'}), dataType:'json', body:JSON.stringify(this.state.bidHistory)})
      .then(res => res.json())
      .then(bidhistory => this.setState({bidhistory}));
 
   }
-
-  // saveBid = (bidHistory) => {
-  //   console.log(bidHistory);
-
-  // }
 
   render() {
     var self = this;
@@ -61,9 +51,8 @@ class DetailList extends Component {
       //map the data to individual details
        var bidSort;
        if(Object.keys(self.state.bidHistory).length !== 0) {
-         self.bidHistoryObj = self.state.bidHistory[details.id];
-         //var bidSort = Object.keys(self.bidHistoryObj).sort(function(a,b){return  self.bidHistoryObj[b]-self.bidHistoryObj[a]});
-         var bidSort = Object.keys(self.bidHistoryObj)
+         self.bidHistoryObj = self.state.bidHistory[details.id];         
+         bidSort = Object.keys(self.bidHistoryObj)
                               .sort((a,b) =>self.bidHistoryObj[b]-self.bidHistoryObj[a])
                               .reduce((obj, key)=>({...obj, [key]: self.bidHistoryObj[key]}), {});
        }      
@@ -88,10 +77,8 @@ class DetailList extends Component {
     return (
       <div className = "detailsList">
        {this.state.bidHistory.length !== 0 &&
-          <div className="row">
-          
-            {detailsNodes}
-         
+          <div className="row">          
+            {detailsNodes}         
           </div>
          }
       </div>

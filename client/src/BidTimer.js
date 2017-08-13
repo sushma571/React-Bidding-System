@@ -7,13 +7,11 @@ class BidTimer extends Component {
 	    this.timer = 0;
 	    this.state = {timeLeft:{},seconds:0};
 	}
-
+    
+    //start the timer after the first mount
 	componentDidMount() { 
-	  this.setState({seconds:this.props.timeFromServer});
-	  var timeFromServer = this.props.timeFromServer; 
+	  this.setState({seconds:this.props.timeFromServer});	 
 	  this.startTimer();
-        
-	      
 	}
 
 	secondsToTime(secs){
@@ -34,7 +32,7 @@ class BidTimer extends Component {
 	  }
 
 	startTimer() {
-	    if (this.timer == 0) {
+	    if (this.timer === 0) {
 	      this.timer = setInterval(this.countDown.bind(this), 1000);
 	    }
 	}
@@ -48,16 +46,10 @@ class BidTimer extends Component {
 	    });
 	    
 	    // Check if we're at zero.
-	    if (seconds == 0) { 
+	    if (seconds === 0) { 
 	      clearInterval(this.timer);
 	    }
 	  }
-
-
-
-	onCompleteCallback() {
-
-	}
 
 	 render() {	 
 	 	return (

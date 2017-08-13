@@ -1,34 +1,23 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import Welcome from './Welcome';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
   // Initialize state
   state = {details:[],bidHistory:[]}
 
-  // Fetch passwords after first mount
+  // Fetch liveStock Details after first mount
   componentDidMount() {
-    this.getDetails();
-    //this.getBidHistory();       
+    this.getDetails();          
   }
 
   getDetails = () => {
-    // Get the passwords and store them in state
+    // Get the livestock Details and store them in state
     fetch('/api/details')
       .then(res => res.json())
       .then(details => this.setState({details}));
   }
-
-  getBidHistory = () => {
-    // Get the passwords and store them in state
-    fetch('/api/bidhistory')
-      .then(res => res.json())
-      .then(bidHistory => this.setState({bidHistory}));
-  }
-
-
 
   render() {
     return (

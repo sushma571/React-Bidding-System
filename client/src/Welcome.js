@@ -1,23 +1,13 @@
 import React, { Component } from 'react';
 import DetailList from './DetailList';
-import BidTimer from './BidTimer';
 
 class Welcome extends Component {
   constructor(props) {
     super(props);
-    this.state = {username:'',value:'',timeRemain:0};
+    this.state = {username:'',value:''};
      
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  componentDidMount() {  
-    var self = this;     
-  }
-
-  serverTimeSync(timeFromServer) {
-    console.log("remainingTime == "+timeFromServer);
-    this.setState({timeRemain:timeFromServer});
   }
 
   handleChange(event) {
@@ -48,23 +38,19 @@ class Welcome extends Component {
               </div>
               ):(
                 <div className="col-md-12  label-center">
-                  <h2>HI! {userName} Welcome to BUYMYCOW</h2>
-                  <h3></h3>
+                  <h2>HI! {userName} Welcome to BUYMYCOW</h2>                  
                 </div>
               )}
            
           </div>
-         <div className="label-center">
-           {this.state.timeRemain !== 0 &&
-             <BidTimer timeFromServer={this.state.timeRemain}/>
-           }
+         <div className="label-center">           
           </div>
       
          <div className="row">          
           <div className="col-md-12 product-detail-div"> 
             {/*<h3 className="label-center">LiveStock Available For Bidding</h3> */}
              {this.props.details.length !== 0 && 
-             <DetailList data={this.props.details}  userName={userName} serverTimeSync={this.serverTimeSync.bind(this)}/>
+             <DetailList data={this.props.details}  userName={userName} />
            }
           </div>
         </div>     
