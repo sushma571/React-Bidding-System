@@ -34,7 +34,7 @@ Then run the app:
 and navigate to http://localhost:3000/
 
 ## Web Sockets API socket.io
-Bid Time starts When server starts and bid duration hard coded in server to 60 min (const bidDuration in server.js  ) and bid ends after 60 min.
+Bid Time starts when server starts and bid duration is hard coded in server to 60 min (const bidDuration in server.js).
 A socket connection is established between client and server when client page loads. The below function notifies server when a client is connected.
 
         io.on('connection', function(socket) {console.log('a user connected')})
