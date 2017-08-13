@@ -51,6 +51,7 @@
   .product-detail-div {
     background-color: #eee;
     padding-top: 20px;
+    min-height: 800px;
 
   }
 
