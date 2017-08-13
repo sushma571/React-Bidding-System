@@ -148,11 +148,11 @@ class Details extends Component {
                 {this.props.userName !=='' && 
                   <div>
                     {this.props.timeFromServer >0 &&
-                    <form className="form-inline" onSubmit={this.handleSubmit}> 
+                    <form className="form-inline bid-form" onSubmit={this.handleSubmit}> 
                       <div className="form-group mx-sm-3" >                  
                         <input id="inputBid" className="form-control" type="number" placeholder="Your Price" min={this.props.basePrice} value={this.state.inputValue} onChange={this.handleChange} />                  
                       </div>
-                    <input type="submit" className="btn btn-primary" value="Bid" />
+                    <input type="submit" className="btn btn-primary bid-submit-btn" value="Bid" />
                     </form>
                     }
                   </div>
@@ -160,9 +160,13 @@ class Details extends Component {
               </div>
             </div>       
           </div>
-          <div className = "row">
-            <h4 className="bid-history-header ">Bid History</h4>
-            <BidHistory bidHistory={this.props.bidHistory} ></BidHistory>
+          <div className = "row bid-history-div">
+            {Object.keys(this.props.bidHistory).length > 0 &&
+              <div>
+                <h4 className="bid-history-header ">Bid History</h4>
+                <BidHistory bidHistory={this.props.bidHistory} ></BidHistory>
+              </div>
+             }
           </div>
         </div>
       </div>

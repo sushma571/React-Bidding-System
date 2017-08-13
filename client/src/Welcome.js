@@ -62,7 +62,7 @@ class Welcome extends Component {
       
          <div className="row">          
           <div className="col-md-12 product-detail-div"> 
-            <h3 className="label-center">LiveStock Available For Bidding</h3>
+            {/*<h3 className="label-center">LiveStock Available For Bidding</h3> */}
              {this.props.details.length !== 0 && 
              <DetailList data={this.props.details}  userName={userName} serverTimeSync={this.serverTimeSync.bind(this)}/>
            }

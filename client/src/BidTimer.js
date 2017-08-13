@@ -5,7 +5,7 @@ class BidTimer extends Component {
 	constructor(props) {
 	    super(props);
 	    this.timer = 0;
-	     this.state = {timeLeft:{},seconds:0};
+	    this.state = {timeLeft:{},seconds:0};
 	}
 
 	componentDidMount() { 
@@ -64,11 +64,11 @@ class BidTimer extends Component {
 	 	          <div className="clockdiv">
 					  <div>
 					    <span className="minutes">{this.state.timeLeft.m}</span>
-					    <div className="smalltext">Minuites</div>
+					    <div className="smalltext">Min</div>
 					  </div>
 					  <div>
 					    <span className="seconds">{this.state.timeLeft.s}</span>
-					    <div className="smalltext">seconds</div>
+					    <div className="smalltext">sec</div>
 					  </div>
 					</div>	 			
       			          		

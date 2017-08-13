@@ -45,6 +45,7 @@
 
   .product-detail-div {
     background-color: #eee;
+    padding-top: 20px;
 
   }
 
@@ -64,8 +65,12 @@
          
   }
 
+  .bid-history-div {
+    margin-top: 20px;
+  }
+
   .bid-history-header {
-        padding-left: 20%;
+        padding-left: 22%;
         text-transform: uppercase;
         font-weight: bold !important;
   }
@@ -90,10 +95,11 @@
       /* font-weight: 100; */
       text-align: center;
       /* font-size: 30px; */
+      padding-left: 10%;
   }
 
 .clockdiv > div{
-  padding: 3px;
+  padding: 4px;
     border-radius: 3px;
     background: #00BF96;
     display: inline-block;
@@ -101,7 +107,7 @@
 }
 
 .clockdiv div > span{
-    padding: 6px;
+    padding: 3px 6px;
     border-radius: 3px;
     background: #00816A;
     display: inline-block;
@@ -110,6 +116,13 @@
 .smalltext{
     padding-top: 5px;
     font-size: 9px;
+}
+
+.bid-submit-btn {
+      margin-left: 5%;
+}
+.bid-form {
+      padding-top: 10px;
 }
 
   
