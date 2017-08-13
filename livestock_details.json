@@ -1,0 +1,21 @@
+[
+    {
+        "id": 111,
+        "breed":"Texas Longhorn",
+        "basePrice": 200,
+        "image":"image1.jpg"        
+    },
+    {
+        "id": 112,
+        "breed":"Hereford",
+        "basePrice": 300,
+        "image":"image2.jpg" 
+    },
+    {
+        "id": 113,
+        "breed":"Shorthorn",
+        "basePrice": 350,
+        "image":"image3.jpg" 
+    }
+    
+]

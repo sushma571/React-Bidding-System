@@ -1,0 +1,125 @@
+/*.App {
+  text-align: center;
+}*/
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+/*  background-color: #222;*/
+  height: 80px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  text-align: center;
+  font-size: large;
+}
+
+.label-center{
+  text-align: center;
+}
+
+.nav-bar {
+  background-color: #5f4b90;
+  color: white;
+  padding: 5px 10px;
+}
+
+.user-banner {
+    background-color: #f7f7f9;
+    color: #2f6f9f;
+    padding-bottom: 20px;
+}
+
+#inputUsername{
+  margin-right: 10px;
+
+  }
+  #inputBid{
+    margin-right: 10px;
+  }
+
+  .product-detail-div {
+    background-color: #eee;
+
+  }
+
+  .bid-detail-div {
+    background-color: white;
+    padding-left: 50px;
+    padding-top: 30px;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-bottom: 30px;
+  }
+
+  .livestock-info {
+        padding-left: 20%;
+        text-transform: uppercase;
+        color:#5f4b90;
+         
+  }
+
+  .bid-history-header {
+        padding-left: 20%;
+        text-transform: uppercase;
+        font-weight: bold !important;
+  }
+
+  .livestock-info h5{
+    font-weight: bold !important;
+  }
+
+  .bid-history-list {
+          padding-right: 15%;
+  }
+
+  ul .list-group-item:nth-child(2) {  
+  font-weight: bold !important; 
+   animation: glow .5s infinite alternate;
+  }
+
+  .clockdiv{
+    font-family: sans-serif;
+      color: #fff;
+      display: inline-block;
+      /* font-weight: 100; */
+      text-align: center;
+      /* font-size: 30px; */
+  }
+
+.clockdiv > div{
+  padding: 3px;
+    border-radius: 3px;
+    background: #00BF96;
+    display: inline-block;
+    margin-right: 3px;
+}
+
+.clockdiv div > span{
+    padding: 6px;
+    border-radius: 3px;
+    background: #00816A;
+    display: inline-block;
+}
+
+.smalltext{
+    padding-top: 5px;
+    font-size: 9px;
+}
+
+  
+  @keyframes glow {
+      to {
+          text-shadow: 0 0 10px green;
+      }
+  }
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
