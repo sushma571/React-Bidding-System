@@ -1,4 +1,4 @@
-# buy-my-cow
+# React-Bidding-System
 
 ## React-express-websocket based Bidding system
 
