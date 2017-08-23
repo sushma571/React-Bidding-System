@@ -13,7 +13,7 @@ Install node and npm globally.
 ## Running API Server
 Open command prompt or git bash navigate to project folder.
 
-    cd buy-my-cow
+    cd React-Bidding-System
 First grab the dependencies with npm:
 
     npm install
