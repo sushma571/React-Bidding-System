@@ -1,4 +1,4 @@
-# buy-my-cow
+# React-Bidding-System
 
 ## React-express-websocket based Bidding system
 
@@ -13,7 +13,7 @@ Install node and npm globally.
 ## Running API Server
 Open command prompt or git bash navigate to project folder.
 
-    cd buy-my-cow
+    cd React-Bidding-System
 First grab the dependencies with npm:
 
     npm install
@@ -36,6 +36,8 @@ Then run the app:
     npm start
   
 and navigate to http://localhost:3000/
+
+Note: make sure to start API server before React App.
 
 ## Web Sockets API socket.io
 Bid Time starts when server starts and bid duration is hard coded in server to 60 min (const bidDuration in server.js).
