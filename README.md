@@ -25,7 +25,7 @@ Then run the app:
 ## Running React App
 Navigate to client folder inside the project.
 
-     cd buy-my-cow/client
+     cd React-Bidding-System/client
      
 First grab the dependencies with npm:
 
