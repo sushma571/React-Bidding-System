@@ -1,5 +1,5 @@
 {
-  "name": "buy-my-cow",
+  "name": "React-Bidding-System",
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
@@ -7,6 +7,10 @@
     "express": "^4.15.4",
     "socket.io": "^2.0.3"
   },
+  "repository" : { 
+   "type" : "git",
+   "url" : "https://github.com/sushma571/React-Bidding-System.git"
+ },
   "devDependencies": {},
   "scripts": {
     "start": "node server.js",
